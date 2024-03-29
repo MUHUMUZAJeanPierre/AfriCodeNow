@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-image{
+    background-image: url('.././src/assets/e-learning_app.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+    background-attachment: fixed;
+}
+.navContainer{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+
+}
+
+  .slide{
+    width: 100%;
+    height: 100%;
+    margin: 0 3rem;
+  
+  }
+  @media screen{
+    .slide{
+      width: 80%;
+      height: 60%;
+    }
+    
+  }
+  .slide-hidden{
+    display: none;
+  }
+  .arrow{
+    position: absolute; 
+    top:10;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: #ABD0E4;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+  }
+  .arrow::after{
+    content: "";
+    width: .75rem;
+    height: .75rem;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+  .arrow:hover{
+    cursor: pointer;
+  }
+  .indicators{
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+  
+  }
+  .indicator{
+    background-color: white;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #555;
+    margin: 0 0.2rem;
+    cursor: pointer;
+  }
+  .indicator-inactive{
+    background-color: grey;
+  }
+  .Carouselo img{
+    width: 15rem;
+    height: 15rem;
+    object-fit:contain;
+    background-color: 'red';
+  }
+  .icon{
+    width: 30px;
+    height: 30px;
+    object-fit:contain;
+  
+  }
+  .bg-image-two{
+    background-image: url('.././src/assets/e-learning_app.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    position: relative;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border-color: #ABD0E4;
+    border-width: 10px;
+    
+  }
+  .bg-image-two:hover{
+    /* border-width: 15px; */
+    border-color: '#12AEE7';
+  }
+
+  @keyframes slide-infinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-slide-infinite {
+    animation: slide-infinite 10s infinite linear;
+  }
+  
