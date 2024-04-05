@@ -84,11 +84,11 @@ function Home() {
     <>
     <ToastContainer/>
       <div className="relative w-full h-screen bg-image pt-[35rem] overflow-hidden">
-        <div className="absolute text-white top-1/2 left-1/2">
-          <h1 className="font-serif text-4xl">
+        <div className="absolute text-center  top-[50%] left-[32%]">
+          <h1 className="font-sans text-3xl text-white ">
             Make bright future for your tech with us
           </h1>
-          <p>{slidesData[slideIndex].text}</p>
+          {/* <p>{slidesData[slideIndex].text}</p> */}
         </div>
 
         <FaArrowLeft
@@ -100,7 +100,7 @@ function Home() {
           onClick={nextSlide}
         />
 
-        <div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 left-1/2">
+        {/* <div className="absolute flex justify-center w-full transform -translate-x-1/2 bottom-4 left-1/2">
           {slidesData.map((_, idx) => (
             <button
               key={idx}
@@ -110,9 +110,9 @@ function Home() {
               }`}
             />
           ))}
-        </div>
+        </div> */}
 
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
           {slidesData.map((slide, idx) => (
             <div
               key={idx}
@@ -130,7 +130,7 @@ function Home() {
               ))}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="justify-center py-7">
         <h1 className="flex justify-center uppercase font-sans text-2xl text-[#12AEE7]">
@@ -154,10 +154,10 @@ function Home() {
             <IoLibraryOutline className="w-10 h-10 text-[#FE5D37] group-hover:text-white" />
           </div>
           <div className="bg-[#ecabbb] sm:w-[200px] h-[200px] px-3 py-3 rounded-full flex flex-col justify-center items-center group-hover:bg-yellow-500 transition-all duration-500">
-            <h1 className="font-sans text-xl font-[500px] text-[13px] py-4 uppercase text-center text-[#FE5D37] group-hover:text-white">
+            <h1 className="font-sans text-xl font-[500px] text-[11px] py-4 uppercase text-center text-[#FE5D37] group-hover:text-white">
               Virtual Labs
             </h1>
-            <p className="font-serif text-[12px] text-center group-hover:text-white text-slate-500 ">
+            <p className="font-serif text-[10px] text-center group-hover:text-white text-slate-500 ">
               Highlight our virtual labs and simulations, providing a secure
               online space for  to hone technical skills.
             </p>
@@ -169,10 +169,10 @@ function Home() {
             <IoLibraryOutline className="w-10 h-10 text-green-500 group-hover:text-white" />
           </div>
           <div className="bg-[#a9d99e] group-hover:bg-green-500 sm:w-[200px] h-[200px] px-3 py-3 rounded-full flex flex-col justify-center items-center">
-            <h1 className="font-sans text-xl py-4 uppercase text-[13px] font-[100px] text-center text-green-500 group-hover:text-white ">
+            <h1 className="font-sans text-xl py-4 uppercase text-[11px] font-[100px] text-center text-green-500 group-hover:text-white ">
               Online Discussion
             </h1>
-            <p className="text-center text-[12px] group-hover:text-white font-cursive text-slate-500">
+            <p className="text-center text-[10px] group-hover:text-white font-cursive text-slate-500">
               Emphasize the community spirit on our platforms, enabling students
               to exchange knowledge and insights freely.
             </p>
@@ -184,10 +184,10 @@ function Home() {
             <IoLibraryOutline className="w-10 h-10 text-yellow-500 group-hover:text-white" />
           </div>
           <div className="bg-[#FC7060] group-hover:bg-yellow-500 sm:w-[200px] h-[200px] px-3 py-12 rounded-full flex flex-col justify-center items-center transition-all duration-200 delay-100 pt-10">
-            <h1 className="font-sans text-[15px] uppercase py-4 font-[100px] text-center text-yellow-400 group-hover:text-white">
+            <h1 className="font-sans text-[11px] uppercase py-4 font-[100px] text-center text-yellow-400 group-hover:text-white">
               Live Webinar& Q/A 
             </h1>
-            <p className="text-center group-hover:text-white text-slate-500 text-[13px]">
+            <p className="text-center group-hover:text-white text-slate-500 text-[11px]">
               Emphasize the value of direct engagement with instructors and the
               opportunity for immediate clarification.
             </p>
@@ -199,10 +199,10 @@ function Home() {
             <IoLibraryOutline className="w-10 h-10 text-blue-500 group-hover:text-white" />
           </div>
           <div className="bg-[#91d1f4] group-hover:bg-[#12AEE7] sm:w-[200px] h-[200px] px-3 py-12 rounded-full flex flex-col justify-center items-center transition-all duration-500 delay-200 pt-10">
-            <h1  className="font-sans uppercase text-[12px] py-4 font-[100px]  text-start text-blue-500 group-hover:text-white">
+            <h1  className="font-sans uppercase text-[11px] py-4 font-[100px]  text-start text-blue-500 group-hover:text-white">
               Performance Analytics
             </h1>
-            <p className="font-sans text-center text-slate-500 group-hover:text-white text-[12px]">
+            <p className="font-sans text-center text-slate-500 group-hover:text-white text-[10px]">
               Emphasize how these tools empower instructors to track engagement,
               pinpoint improvement areas, and offer tailored support.
             </p>
@@ -269,15 +269,14 @@ function Home() {
         </div>
       </div>
 
-      <div className="justify-center py-12 sm:flex">
+      <div className="flex py-12 justify-evenly sm:flex">
         <div
           style={{
             backgroundColor: "#ABD0E4",
-            width: 570,
+            width: 600,
             height: 400,
-            // borderWidth: 1,
             borderTopLeftRadius: 8,
-            borderBottomLeftRadius: 15,
+            borderBottomLeftRadius: 8,
             borderColor: "black",
             // borderRadius: 20,
           }}

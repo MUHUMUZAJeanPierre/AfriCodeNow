@@ -18,6 +18,7 @@ import Student from "./Components/admin/cardStat/Student";
 import CardTableAfriCodeNow from "./Components/admin/cardStat/CardTableAfriCodeNow";
 import CardTableFeedBack from "./Components/admin/cardStat/CardTableFeedBack";
 import Feedback from "./Components/admin/cardStat/Feedback";
+import About from "./Components/About/About";
 
 const Layout = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} /> 
+              <Route   path="about"  element={<About/>} />
               <Route  path="contactUs" element={<Appointment/>} />
               <Route  path="courses" element={<Courses />} /> 
               <Route  path="course/:courseId" element={<CourseDetail/>} />

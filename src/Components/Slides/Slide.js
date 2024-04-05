@@ -1,4 +1,4 @@
-import ima1 from '../../assets/e-learning_app.jpg'
+import ima1 from '../../assets/contact.jpg'
 import ima2 from '../../assets/e.jpg'
 import ima3 from '../../assets/What-Are-the-Best-Free-Online-Learning-Platforms.webp';
 import ima4 from '../../assets/e-learning-two.jpg';
