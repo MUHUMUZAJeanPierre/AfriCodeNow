@@ -93,7 +93,7 @@
   
   }
   .bg-image-two{
-    background-image: url('.././src/assets/e-learning_app.jpg');
+    background-image: url('.././src/assets/logoNy.png');
     background-size: cover;
     /* background-position: center; */
     position: relative;
@@ -104,6 +104,42 @@
     border-color: #ABD0E4;
     border-width: 10px;
     
+  }
+  .bg-image-One{
+    background-image: url('.././src/assets/pac.png');
+    background-size: cover;
+    /* background-position: center; */
+    position: relative;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border-color: #ABD0E4;
+    border-width:8px;
+  }
+  .bg-image-Three{
+    background-image: url('.././src/assets/peggy.jpeg');
+    background-size: cover;
+    /* background-position: center; */
+    position: relative;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border-color: #7B8398;
+    border-width:8px;
+  }
+  .bg-image-Muhu{
+    background-image: url('.././src/assets/muhumuza.png');
+    background-size: cover;
+    /* background-position: center; */
+    position: relative;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border-color: #11B0E5;
+    border-width:8px;
   }
   .bg-image-two:hover{
     /* border-width: 15px; */
@@ -122,4 +158,9 @@
   .animate-slide-infinite {
     animation: slide-infinite 10s infinite linear;
   }
-  
+  .appointment{
+    background-image: url('.././src/assets/e-learning-two.jpg');
+    width: 700px;
+    height: 500px;
+    background-size: cover;
+  }

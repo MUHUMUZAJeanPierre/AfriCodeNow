@@ -1,105 +1,152 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import img from '../../assets/logoNy.png'
 
-
-export default function SignUp(){
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  
-  const handleSignUp = async() => {
-    if (!email.trim() ||!password.trim()) {
-      toast.error('Please fill in all fields');
+
+  const handleSignUp = async () => {
+    if (!email.trim() || !password.trim()) {
+      toast.error("Please fill in all fields");
       return;
     }
     setIsLoading(true);
     try {
       await axios({
-        method: 'POST',
-        url: 'https://afri-code-back-end-zeo6.onrender.com/api/user/signup',
+        method: "POST",
+        url: "https://afri-code-back-end-zeo6.onrender.com/api/user/signup",
         data: {
           email: email,
-          password: password
-        }
-      }).then((response)=>{
-        console.log('response', response.newStudentCreated);
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+          password: password,
+        },
+      }).then((response) => {
+        console.log("response", response.newStudentCreated);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
         toast.success(response.data.message);
-        setTimeout(()=>{
-          navigate('/login');
-        })
-      }, 3000)
+        setTimeout(() => {
+          navigate("/login");
+        });
+      }, 3000);
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
-      toast.error('error');
+      console.log(error.message);
+      toast.error("error");
     }
-    
-    
-  }
-    
-    
+  };
+
   return (
     <>
-    <ToastContainer/>
-    <div className="w-full h-full bg-blue-500 py-[9rem] bg-gradient-br from-blue-200 to-[#12AEE7]">
-      <div className="flex justify-center ">
-        <div className="bg-white w-[470px] h-[520px] flex flex-col justify-center items-center rounded-3xl">
-          <p style={{ fontWeight: '500' }} className="font-sans text-3xl font-semibold text-[#12AEE7]">
-            Student SignUp
-          </p>
-          <p className="py-5 text-slate-500">Hey enter your details to create your account</p>
-          
-          <br />
-          <span className="flex gap-2 border-[2px] border-gray-200 bg-white  rounded-xl w-[70%] h-14 pl-[20px]">
-            <MdOutlineEmail style={{ fontSize: 20 }} className="mt-[15px] text-[#12AEE7]" />
-            <input
-              type='text'
-              placeholder="Enter your Email"
-              className="text-[#12AEE7] focus:outline-none w-full h-full rounded-xl "
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </span>{" "}
-          <br />
-          <span className="flex gap-2 border-[2px] border-gray-200 bg-white  rounded-xl w-[70%] h-14 pl-[20px]">
-            <RiLockPasswordFill style={{ fontSize: 20 }} className="mt-[15px] text-[#12AEE7]" />
-            <input
-              type='password'
-              placeholder="Create Password"
-              className="text-[#12AEE7] focus:outline-none rounded-xl w-full h-full"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </span><br/>
-          <span className="flex gap-2 border-[2px] border-gray-200 bg-white  rounded-xl w-[70%] h-14 pl-[20px]">
-            <RiLockPasswordFill style={{ fontSize: 20 }} className="mt-[15px] text-[#12AEE7]" />
-            <input
-              type='password'
-              
-              placeholder="Confirm  Password"
-              className="text-[#12AEE7] focus:outline-none rounded-xl w-full h-full"
-            />
-          </span>{" "}
-          <br />
-          <br />
-          <span className="flex gap-2 justify-center bg-[#12AEE7] border-red-500 rounded-[30px] w-[70%] h-14 pl-[20px]">
-            <button onClick={handleSignUp} style={{ fontWeight: '500', color: 'white' }} className="text-xl font- focus:outline-none">
-              
-              SignUp
-            </button>
-          </span>
-          
+      <ToastContainer />
+      <div className="flex flex-col items-center bg-[#05A2E5]">
+        <div className="absolute -z-20 object-contain h-[80vh]">
+          {/* <img src={img} alt="" className="" /> */}
+        </div>
+        <div className="flex items-center justify-center ">
+          <div className=" flex flex-col items-center  lg:pt-[4rem] ">
+            <div className="relative flex lg:w-full w-[100vw] bg-white  flex-col min-w-0 break-words   mb-6 shadow-lg rounded-lg  border-0">
+              <div className="px-6 py-6 mb-0 rounded-t">
+                <div className="flex flex-col items-center mb-3">
+                  <div className="w-fit -mt-[4rem] ">
+                    <img
+                      src={img}
+                      alt="Logo Image"
+                      className="mt-6 lx:w-10 md:72 p-14"
+                    />
+                  </div>
+                  <h6 className="text-[15px] text-slate-500 font-sora">
+                    REGISTER
+                  </h6>
+                </div>
+              </div>
+              <div className="flex-auto px-4 py-10 pt-0 lg:px-10">
+                <div className="mb-3 font-bold text-center text-blueGray-400"></div>
+                <form className="font-sora">
+                  <div className="relative w-full mb-3">
+                    <label
+                      className="block mb-2 text-xs font-bold uppercase text-slate-600"
+                      htmlFor="grid-password"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-3 py-3 text-sm transition-all duration-150 ease-linear bg-white border-0 rounded shadow placeholder-blueGray-300 text-blueGray-600 focus:outline-none focus:ring"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="relative w-full mb-3">
+                    <label
+                      className="block mb-2 text-xs font-bold uppercase text-slate-600"
+                      htmlFor="grid-password"
+                    >
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      className="w-full px-3 py-3 text-sm transition-all duration-150 ease-linear bg-white border-0 rounded shadow placeholder-blueGray-300 text-blueGray-600 focus:outline-none focus:ring"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input
+                        id="customCheckLogin"
+                        type="checkbox"
+                        className="w-5 h-5 ml-1 transition-all duration-150 ease-linear border-0 rounded form-checkbox text-blueGray-700"
+                      />
+                      <span className="ml-2 text-sm font-semibold text-slate-600">
+                        Remember me
+                      </span>
+                    </label>
+                  </div>
+                  <Link  className="mt-6 text-center">
+                    <button
+                      className="w-full px-6 py-3 mb-1 mr-1 text-sm font-bold text-slate-300 uppercase transition-all duration-150 ease-linear rounded shadow outline-none bg-cyan-700 hover:bg-[#4DBCE9] active:bg-blueGray-600 hover:shadow-lg focus:outline-none"
+                      type="button"
+                      onClick={handleSignUp}
+                      
+                    >
+                      {isLoading ? "registering in ..." : "register "}
+                    </button>
+                  </Link>
+                </form>
+              </div>
+            </div>
+            <div className="flex   space-x-[16rem] relative">
+              <div className="w-1/2 mb-[5rem]">
+                <a
+                  href="#pablo"
+                  onClick={(e) => e.preventDefault()}
+                  className="text-blueGray-200"
+                >
+                  <small className="text-white">Forgot password?</small>
+                </a>
+              </div>
+              <div className="w-1/2 text-right">
+                <Link to="/login" className="text-blueGray-200">
+                  <small className="text-white ml-[5rem]">
+                    Login
+                  </small>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

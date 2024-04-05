@@ -83,7 +83,7 @@ const Navbar = () => {
             </a>
           </Link>
 
-          <Link to="/login">
+          {/* <Link to="/login">
             <a
               href=""
               className="px-2 font-sans text-[#12AEE7] hover:text-[#103741] uppercase "
@@ -91,7 +91,7 @@ const Navbar = () => {
             >
               Classes
             </a>
-          </Link>
+          </Link> */}
           <Link to="/contactUs">
             <a
               href=""
@@ -101,7 +101,7 @@ const Navbar = () => {
               Contact Us
             </a>
           </Link>
-          <Link to="/training">
+          {/* <Link to="/training">
             <a
               href=""
               className="px-2 font-sans text-[#12AEE7]  hover:text-[#103741] uppercase"
@@ -109,7 +109,7 @@ const Navbar = () => {
             >
               TRAINING
             </a>
-          </Link>
+          </Link> */}
         </div>
 
         <div className="py-1.5 text-xl text-black-600 rounded-3xl px-6 font-bold bg-[#12AEE7] hover:bg-[#103741]  ">
