@@ -55,7 +55,7 @@ export default function CardSettings() {
 
   const handleImage = (e) => {
     e.preventDefault();
-    setPosterPath(e.target.files[0]);
+    setPosterPath(e.target.value);
   };
 
   return (
@@ -143,10 +143,10 @@ export default function CardSettings() {
                     COURSE Image
                   </label>
                   <input
-                    type="file"
+                    type="url"
+                    placeholder="Enter image url"
                     className="w-full px-3 py-3 transition-all ease-in-out bg-white border rounded shadow focus:outline-none focus:ring"
-                    // onChange={handleImage}
-                    
+                    onChange={handleImage}  
                   />
                 </div>
               </div>
